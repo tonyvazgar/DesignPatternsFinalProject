@@ -10,7 +10,6 @@ public abstract class AbstractClass
     public static void templateMethodIntro() {
 
         ConcreteClass concreteObject = new ConcreteClass();
-
         concreteObject.primitiveOperation1Intro();
     }
 
@@ -18,10 +17,8 @@ public abstract class AbstractClass
     public static void templateMethodMain() {
 
         ConcreteClass concreteObject;
-
         //----------------------------
         concreteObject = new ConcreteClass();
-
         concreteObject.primitiveOperation1App();
         concreteObject.primitiveOperation2App();
     }//end templateMethod

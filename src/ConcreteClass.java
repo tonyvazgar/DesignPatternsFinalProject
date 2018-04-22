@@ -14,7 +14,10 @@ public class ConcreteClass extends AbstractClass {
     }
 
     public void primitiveOperation1App() {
-        init();
+        model = new EstructuraDeDatos();
+        viewPrincipal = new InterfazPrincipal();
+        viewNuevaReceta = new InterfazNuevaReceta();
+        controller = new Mediador(model, viewPrincipal, viewNuevaReceta);
         viewPrincipal.setActionListener(controller);
         controller.actualizaElView();
     }
@@ -23,10 +26,4 @@ public class ConcreteClass extends AbstractClass {
         viewPrincipal.inicia();
     }
 
-    private void init(){
-        model = new EstructuraDeDatos();
-        viewPrincipal = new InterfazPrincipal();
-        viewNuevaReceta = new InterfazNuevaReceta();
-        controller = new Mediador(model, viewPrincipal, viewNuevaReceta);
-    }
 }
