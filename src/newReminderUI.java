@@ -34,6 +34,7 @@ public class newReminderUI extends Frame implements ActionListener {
         endProgram();
     }
 
+
     private void constuyeComponentes() {
         tittleLabel = new Label("Tittle:");
         tittleText = new TextField();
