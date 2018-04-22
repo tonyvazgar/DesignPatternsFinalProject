@@ -4,13 +4,14 @@ public class ConcreteClass extends AbstractClass {
     InterfazNuevaReceta viewNuevaReceta;
     EstructuraDeDatos model;
     Mediador controller;
-    Intro intro;
+    MainInterface intro;
 
 
     @Override
     public void primitiveOperation1Intro() {
-        intro = new Intro();
+        intro = new MainInterface();
         intro.inicia();
+
     }
 
     public void primitiveOperation1App() {
