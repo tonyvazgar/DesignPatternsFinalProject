@@ -1,10 +1,11 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class newReminder extends Frame implements ActionListener {
+public class newReminderUI extends Frame implements ActionListener {
 
     Font tipografia = new Font("Helvetica", Font.PLAIN, 14);
 
@@ -21,7 +22,7 @@ public class newReminder extends Frame implements ActionListener {
     Button ok;
     Button cancel;
 
-    public newReminder(){
+    public newReminderUI(){
         setTitle("Add new reminder");
         setBounds(100, 100, 460, 300);
         setLocationRelativeTo(null);
@@ -76,10 +77,25 @@ public class newReminder extends Frame implements ActionListener {
         Button b = (Button)e.getSource();
         if(b == ok){
             System.out.println("Its ok");
+            Reminder dato = obtieneDatoDelView();
+            System.out.println(dato.toString());//mediador.guadar(dato);
+            termina();
+            JOptionPane.showMessageDialog(this, "Reminder added!.", "AVISO", JOptionPane.PLAIN_MESSAGE);
+
         }else {
             System.out.println("Its cancelled");
             termina();
         }
+    }
+
+    private Reminder obtieneDatoDelView() {
+
+        String tittle = this.tittleText.getText();
+        String signature = this.signatureText.getText();
+        String date = this.dateText.getText();
+        String details = this.detailsText.getText();
+
+        return new Reminder(tittle, signature, date, details);
     }
 
     public void termina() {

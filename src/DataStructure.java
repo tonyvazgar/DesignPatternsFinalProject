@@ -27,9 +27,10 @@ public class DataStructure extends LinkedList<Reminder> implements Model {
             details = datos.readString();
             reminder = new Reminder(tittle, signature, date, details);
             add(reminder);
-            System.out.println(reminder.toString());
             i = i + 1;
         }
+        System.out.println(toString());
+
     }
 
     @Override

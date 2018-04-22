@@ -8,8 +8,6 @@ public class Main
     {
 
         AbstractClass.templateMethodIntro();
-        Reminder d = new Reminder("COMER", "tipis", "22/4/2018", "le gusta el quesito");
-        System.out.println(d.toString());
 
     }//end main
 

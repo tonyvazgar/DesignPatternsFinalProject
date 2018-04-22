@@ -52,7 +52,7 @@ public class MainInterface extends Frame {
 
             System.err.println("Nuevo recordatorio");
             //Cambiar por interfaz de nuevo recordatorio
-            new newReminder().setVisible(true);
+            new newReminderUI().setVisible(true);
         }
     }
 
