@@ -4,7 +4,7 @@ public class Main
     public static void main(String[] args)
     {
 
-        AbstractClass.templateMethod();
+        AbstractClass.templateMethodIntro();
 
     }//end main
 
