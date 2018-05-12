@@ -19,7 +19,6 @@ public abstract class AbstractClass
         //----------------------------
         concreteObject = new ConcreteClass();
         concreteObject.primitiveOperationIntro();
-        //concreteObject.primitiveOperation2();
     }//end templateMethod
 
     public static void templateMethodInterfaz(){

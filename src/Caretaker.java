@@ -1,9 +1,8 @@
-import java.util.Stack;
-
 /**
  * Clase que pertenece a Memento
  * @author Luis Antonio Vazquez Garcia <luis.vazquezga@udlap.mx>
  */
+import java.util.Stack;
 public class Caretaker
 {
     static Stack<Memento> stack = new Stack<Memento>();
