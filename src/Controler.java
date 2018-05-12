@@ -50,18 +50,20 @@ public class Controler implements ActionListener {
             actualizarMarcadores();
         }
         if(botonAccionado == view.anterior){
-            if(ProjectDeductiveDatabase.errores > 0){
-                ProjectDeductiveDatabase.errores--;
+            if(ProjectDeductiveDatabase.errores > 0 || ProjectDeductiveDatabase.puntaje > 0) {
+                if (ProjectDeductiveDatabase.errores > 0) {
+                    ProjectDeductiveDatabase.errores--;
+                }
+                view.respuestas.removeAllItems();
+                String undo = elSingleton.undo();
+                view.consola.setText(undo);
+                view.tema.setText(ProjectDeductiveDatabase.obtenerTemaDePregunta(undo));
+                Vector<String> respuestas = ProjectDeductiveDatabase.respuestas(undo);
+                for (int i = 0; i < respuestas.size(); i++) {
+                    view.respuestas.addItem(respuestas.get(i));
+                }
+                ProjectDeductiveDatabase.checarRespuesta(view.respuestas.getItemAt(view.respuestas.getSelectedIndex()).toString());
             }
-            view.respuestas.removeAllItems();
-            String undo = elSingleton.undo();
-            view.consola.setText(undo);
-            view.tema.setText(ProjectDeductiveDatabase.obtenerTemaDePregunta(undo));
-            Vector<String> respuestas = ProjectDeductiveDatabase.respuestas(undo);
-            for(int i = 0; i < respuestas.size(); i++) {
-                view.respuestas.addItem(respuestas.get(i));
-            }
-            ProjectDeductiveDatabase.checarRespuesta(view.respuestas.getItemAt(view.respuestas.getSelectedIndex()).toString());
         }
     }
 
