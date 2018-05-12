@@ -21,7 +21,7 @@ public class ProjectDeductiveDatabase {
 	static String tema = "";
 	static String respuestaCorrecta;
 
-	static SingletonAccess elSingleton;
+	static SingletonPattern elSingleton;
 
 	public static Vector<Dato> getDatos(Vector<FactResult>  answerSet) {
 		Vector<Dato> datos;
@@ -64,7 +64,7 @@ public class ProjectDeductiveDatabase {
 		database.load("./preguntados.txt");
 		answerSet = database.getAnswerSet();
 		//object = new Originator();
-		elSingleton = new SingletonAccess();
+		elSingleton = new SingletonPattern();
 		elSingleton.getInstancia();
 
 	}
@@ -220,23 +220,9 @@ public class ProjectDeductiveDatabase {
 	public static Vector<String> respuestas(String pregunta){
 		cargarArchivos();
 		datos = getDatos(answerSet);
-		String respuestaCor = "";
-		String respuesta = "";
-		//String tema = "";
-		respuestas = new Vector<String>();
-		for(Dato elDato: datos){
-			if(elDato.getPredicate().equals("pregunta")) {
-				if(elDato.getArgument(1).replace("\"","").equals(pregunta)) {
-					tema = elDato.getArgument(0);
-					respuestaCorrecta = elDato.getArgument(2).replace("\"","");
-				}
-			}
-		}
-		for(Dato elDato: datos){
-			if(elDato.getPredicate().equals("pregunta") && elDato.getArgument(0).equals(tema)){
-				respuestas.add(elDato.getArgument(2).replace("\"",""));
-			}
-		}
+		Vector<String> respuestas = new Vector<String>();
+		respuestas = AbstractClass.cargarRespuestas(datos, respuestas, pregunta, answerSet, tema, respuestaCorrecta);
+		respuestaCorrecta = respuestas.lastElement();
 		return respuestas;
 	}
 }//end ProjectDeductiveDatabase

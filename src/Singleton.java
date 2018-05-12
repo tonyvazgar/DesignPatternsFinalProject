@@ -1,3 +1,7 @@
+/**
+ * Clase que pertenece a Singleton
+ * @author Luis Antonio Vazquez Garcia <luis.vazquezga@udlap.mx>
+ */
 public class Singleton
 {
     private static Singleton uniqueInstance;

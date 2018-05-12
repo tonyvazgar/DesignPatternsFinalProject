@@ -1,6 +1,15 @@
+/**
+ * @author Luis Antonio Vazquez Garcia <luis.vazquezga@udlap.mx>
+ */
+/**
+ * Para esta aplicación, seguí con el de IA agregando los siguientes patrones:
+ * 1. Memento: Para poder regresar a un estado anterior (una pregunta anterior) guardando el estado de la pregunta.
+ * 2. Singleton: Para poder tener una instancia del memento y asi validar respuestas anterores. Ya que se accede a memento en varias clases.
+ * 3. Template Method: Para organizar las diferentes partes del algoritmo y sea más fácil interpretarlo.
+ */
 public class Main {
     public static void main(String[] Args){
-        Intro intro = new Intro();
-        intro.inicia();
+        AbstractClass.templateMethodIntro();
+        AbstractClass.templateMethodInterfaz();
     }
 }

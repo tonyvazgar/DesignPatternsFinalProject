@@ -12,7 +12,7 @@ public class Controler implements ActionListener {
     Interfaz view;
     ProjectDeductiveDatabase model;
     Originator object;
-    SingletonAccess elSingleton;
+    SingletonPattern elSingleton;
 
     public Controler(ProjectDeductiveDatabase model, Interfaz view){
         this.model = model;
@@ -22,7 +22,7 @@ public class Controler implements ActionListener {
         for(int i = 0; i < ProjectDeductiveDatabase.respuestas.size(); i++){
             view.respuestas.addItem(ProjectDeductiveDatabase.respuestas.get(i));
         }
-        elSingleton = new SingletonAccess();
+        elSingleton = new SingletonPattern();
         elSingleton.getInstancia();
     }
 
