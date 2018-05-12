@@ -20,7 +20,7 @@ public class Intro extends Frame implements ActionListener {
 
     public Intro() {
         setTitle("Intro");
-        setBounds(100, 100, 350, 350);
+        setBounds(100, 100, 400, 350);
         setLocationRelativeTo(null);
         setBackground(new Color(255,255,255));
         setLayout(null);
@@ -41,36 +41,36 @@ public class Intro extends Frame implements ActionListener {
 
     private void constuyeComponentes() {
         ok = new Button("OK");
-        ok.setBounds(250, 300, 80, 25);
+        ok.setBounds(150, 300, 80, 25);
         add(ok);
         ok.addActionListener(this::actionPerformed);
 
-        infoNombre = new Label("Luis Antonio Vázquez García           153675");
-        infoNombre.setBounds(30, 50, 300, 20);
+        infoNombre = new Label("Luis Antonio Vázquez García                    153675");
+        infoNombre.setBounds(30, 50, 450, 20);
         add(infoNombre);
 
-        info = new       Label("Este es el mismo programa que utilicé para");
-        info.setBounds(30, 110, 300, 20);
+        info = new       Label("* Este proyecto usa DLV para relacionar preguntas");
+        info.setBounds(30, 120, 450, 20);
         add(info);
 
-        info2 = new       Label("MVC, pero ahora será implementado con los");
-        info2.setBounds(30, 130, 300, 20);
+        info2 = new       Label("  con respuestas deacuerdo a la categoria.");
+        info2.setBounds(30, 140, 450, 20);
         add(info2);
 
-        info3 = new       Label("siguientes patrones:");
-        info3.setBounds(30, 150, 300, 20);
+        info3 = new       Label("* Las respuestas posibles son de la misma categoria");
+        info3.setBounds(30, 160, 450, 20);
         add(info3);
 
-        patron1 = new       Label("             •Template Method");
-        patron1.setBounds(30, 190, 300, 20);
+        patron1 = new     Label("  que la pregunta a la que pertenece.");
+        patron1.setBounds(30, 180, 300, 20);
         add(patron1);
 
-        patron2 = new       Label("             •");
-        patron2.setBounds(30, 210, 300, 20);
+        patron2 = new     Label("* Las preguntas se seleccionan aleatoriamente");
+        patron2.setBounds(30, 200, 450,20);
         add(patron2);
 
-        patron3 = new       Label("             •");
-        patron3.setBounds(30, 230, 300, 20);
+        patron3 = new     Label("  entre todas las preguntas y puede que se repitan.");
+        patron3.setBounds(30, 220, 450,20);
         add(patron3);
     }
 
@@ -78,17 +78,39 @@ public class Intro extends Frame implements ActionListener {
     public void actionPerformed(ActionEvent evento) {
         Button botonAccionado = (Button) evento.getSource();
         if (botonAccionado == ok){
-            AbstractClass.templateMethodMain();
+            ProjectDeductiveDatabase model;
+            Interfaz view;
+            Controler controler;
+            model = new ProjectDeductiveDatabase();
+            view = new Interfaz();
+            controler = new Controler(model, view);
+            view.inicia(controler);
             setVisible(false);
         }
     }
 
-    public InterfazPrincipal ventanaPrincipal() {
-        return new InterfazPrincipal();
+    public Interfaz ventanaPrincipal() {
+        return new Interfaz();
     }
 
 
     public void inicia(){
-        setVisible(true);
+        //setVisible(true);
+        JOptionPane.showMessageDialog(this,
+                "LUIS ANTONIO VAZQUEZ GARCIA                                ID: 153675 \n" +
+                        "MISMO PROYECTO QUE INTELIGENCIA ARTIFICIAL PERO AGREGUE ESTOS PATRONES:\n" +
+                        "--> MEMENTO: Para poder regresar a un estado anterior (una pregunta anterior).\n" +
+                        "--> SINGLETON: Para poder tener una instancia del memento y asi validar respuestas.\n" +
+                        "--> TEMPLATE METHOD: Para organizar las diferentes partes del algoritmo y sea más fácil interpretarlo.",
+                "Acerca del autor",
+                JOptionPane.INFORMATION_MESSAGE);
+        ProjectDeductiveDatabase model;
+        Interfaz view;
+        Controler controler;
+        model = new ProjectDeductiveDatabase();
+        view = new Interfaz();
+        controler = new Controler(model, view);
+        view.inicia(controler);
+        setVisible(false);
     }
 }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dlv">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dlv.bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
