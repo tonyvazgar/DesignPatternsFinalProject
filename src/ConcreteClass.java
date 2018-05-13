@@ -43,9 +43,21 @@ public class ConcreteClass extends AbstractClass
                 respuestas.add(elDato.getArgument(2).replace("\"",""));
             }
         }
-        System.err.println("Respuesta en abstract class: "+respuestaCorrecta);
         respuestas.add(respuestaCorrecta);
         return respuestas;
     }
+
+    @Override
+    public Vector<String> primitiveOperationCargarPreguntasTema(Vector<Dato> datos, Vector<String> vector, Vector<FactResult> answerSet, String tema) {
+        vector = new Vector<String>();
+        datos = ProjectDeductiveDatabase.getDatos(answerSet);
+        for(Dato elDato:datos){
+            if(elDato.getPredicate().equals(tema)){
+                vector.add(elDato.getArgument(0));
+            }
+        }
+        return vector;
+    }
+
 
 }//end ConcreteClass

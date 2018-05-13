@@ -11,6 +11,7 @@ public abstract class AbstractClass
     public abstract void primitiveOperationIntro();
     public abstract void primitiveOperationInterfaz();
     public abstract Vector<String> primitiveOperationCargarRespuestas(Vector<Dato> datos, Vector<String> respuestas, String pregunta, Vector<FactResult> answerSet, String tema, String respuestaCorrecta);
+    public abstract Vector<String> primitiveOperationCargarPreguntasTema(Vector<Dato> datos, Vector<String> vector, Vector<FactResult> answerSet, String tema);
     //---------------
 
     public static void templateMethodIntro()
@@ -31,6 +32,12 @@ public abstract class AbstractClass
         ConcreteClass conceteObject;
         conceteObject = new ConcreteClass();
         return conceteObject.primitiveOperationCargarRespuestas(datos, respuestas, pregunta, answerSet, tema, respuestaCorrecta);
+    }
+
+    public static Vector<String> templateMethodCargarPreguntasTema(Vector<Dato> datos, Vector<String> vector, Vector<FactResult> answerSet, String tema){
+        ConcreteClass conceteObject;
+        conceteObject = new ConcreteClass();
+        return conceteObject.primitiveOperationCargarPreguntasTema(datos, vector, answerSet, tema);
     }
 
 }//end AbstractClass

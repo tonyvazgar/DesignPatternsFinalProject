@@ -70,58 +70,28 @@ public class ProjectDeductiveDatabase {
 	}
 	public static String cargarPreguntasMusica(){
 		cargarArchivos();
-		musica = new Vector<String>();
-		datos = getDatos(answerSet);
-		for(Dato elDato:datos){
-			if(elDato.getPredicate().equals("temaMusica")){
-				musica.add(elDato.getArgument(0));
-			}
-		}
+		musica = AbstractClass.templateMethodCargarPreguntasTema(datos, musica, answerSet, "temaMusica");
 		return musica.toString();
 	}
 	public static String cargarPreguntasCiencia(){
 		cargarArchivos();
-		ciencia = new Vector<String>();
-		datos = getDatos(answerSet);
-		for(Dato elDato:datos){
-			if(elDato.getPredicate().equals("temaCiencia")){
-				ciencia.add(elDato.getArgument(0));
-			}
-		}
+		ciencia = AbstractClass.templateMethodCargarPreguntasTema(datos, musica, answerSet, "temaCiencia");
 		return ciencia.toString();
 	}
 	public static String cargarPreguntasGeneral(){
 		cargarArchivos();
-		general = new Vector<String>();
-		datos = getDatos(answerSet);
-		for(Dato elDato:datos){
-			if(elDato.getPredicate().equals("temaGeneral")){
-				general.add(elDato.getArgument(0));
-			}
-		}
+		general = AbstractClass.templateMethodCargarPreguntasTema(datos, musica, answerSet, "temaGeneral");
 		return general.toString();
 	}
 	public static String cargarPreguntasHistoria(){
 		cargarArchivos();
-		historia = new Vector<String>();
-		datos = getDatos(answerSet);
-		for(Dato elDato:datos){
-			if(elDato.getPredicate().equals("temaHistoria")){
-				historia.add(elDato.getArgument(0));
-			}
-		}
+		historia = AbstractClass.templateMethodCargarPreguntasTema(datos, musica, answerSet, "temaHistoria");
 		return historia.toString();
 	}
 
 	public static String cargarPreguntasArte(){
 		cargarArchivos();
-		arte = new Vector<String>();
-		datos = getDatos(answerSet);
-		for(Dato elDato:datos){
-			if(elDato.getPredicate().equals("temaArte")){
-				arte.add(elDato.getArgument(0));
-			}
-		}
+		arte = AbstractClass.templateMethodCargarPreguntasTema(datos, musica, answerSet, "temaArte");
 		return arte.toString();
 	}
 
